@@ -9,6 +9,9 @@ export const Nav = () => {
             <HeaderDecoration />
             <StyledLink href="/" title="Home" />
             <StyledLink href="/art" title="Art" />
+            <StyledLink href="/woodwork" title="Woodworking" />
+            <StyledLink href="/code" title="Code" />
+            <StyledLink href="/contact" title="Contact me" />
         </div>
     )
 }
