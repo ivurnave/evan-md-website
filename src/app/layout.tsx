@@ -22,11 +22,10 @@ export default function RootLayout({
       <body
         className={`h-dvh p-4 ${sourceCodeProFont.className}`}
       >
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-4">
           <Nav />
           {children}
         </div>
-        <div className="paperOverlay"></div>
       </body>
     </html>
   );

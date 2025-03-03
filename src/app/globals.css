@@ -2,10 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: consolidate colors */
 :root {
   --background: #f8eded;
   --foreground: #1c213f;
+  --yellow: #f3b900;
+  --green: green;
+  --coral: #f5534f;
+  --blue: #313a87;
+  --yellow-light: #f7d34e;
+  --green-light: #7cf39f;
+  --coral-light: #f88a7d;
+  --blue-light: #5f6abb;
+  --yellow-dark: #d18f00;
+  --green-dark: #006400;
+  --coral-dark: #e04b40;
+  --blue-dark: #1d2a66;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -39,6 +53,8 @@ body {
   /* ... */
 }
 
+
+/* TODO: Maybe remove... dunno if I still want to pursue this */
 .grit {
   mask-image: url("../../public/images/grit.png");
 }
