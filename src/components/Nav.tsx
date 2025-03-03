@@ -15,7 +15,7 @@ export const Nav = () => {
     return (
         <>
             {/* Nav desktop */}
-            <div className="hidden md:flex flex-col shrink-0 rounded-[2vw] border-solid border border-slate-50 shadow-xl overflow-hidden">
+            <div className="hidden md:flex flex-col shrink-0 rounded-3xl border-solid border border-slate-50 shadow-xl overflow-hidden">
                 <HeaderDecoration />
                 <StyledLink href="/" title="Home" />
                 <StyledLink href="/art" title="Art" />
