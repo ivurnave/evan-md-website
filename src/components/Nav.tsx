@@ -5,7 +5,7 @@ const StyledLink = ({ href, title }: { href: string, title: string }) => <Link c
 
 export const Nav = () => {
     return (
-        <div className="flex flex-col shrink-0">
+        <div className="hidden md:mr-4 md:flex flex-col shrink-0">
             <HeaderDecoration />
             <StyledLink href="/" title="Home" />
             <StyledLink href="/art" title="Art" />

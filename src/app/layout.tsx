@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-dvh ${sourceCodeProFont.className}`}
+        className={`h-dvh p-4 ${sourceCodeProFont.className}`}
       >
-        <div className="py-4 mx-4 flex flex-row ">
+        <div className="flex flex-row">
           <Nav />
           {children}
         </div>

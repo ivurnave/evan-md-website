@@ -54,8 +54,3 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
 }
-
-.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
