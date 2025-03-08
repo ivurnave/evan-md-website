@@ -2,17 +2,9 @@
 
 import Link from "next/link"
 import { HeaderDecoration } from "./HeaderDecoration"
-import { Colors } from "@/colors";
 import { useState } from "react";
 
-// TODO: make this work lol
-const chooseHoverColor = () => {
-    const colors = Object.keys(Colors.light);
-    const randomIndex = Math.floor(Math.random() * 4);
-    return colors[randomIndex];
-}
-
-const StyledLink = ({ href, title }: { href: string, title: string }) => <Link className={`m-1 p-1 rounded-full hover:bg-coral-light`} href={href}>{title}</Link>
+const StyledLink = ({ href, title }: { href: string, title: string }) => <Link className={`m-1 p-1 rounded-full hover:bg-outline`} href={href}>{title}</Link>
 
 const ToggleNavbarButton = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: boolean) => void }) => {
     const toggleNavbar = () => setIsOpen(!isOpen)
