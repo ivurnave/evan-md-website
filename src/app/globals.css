@@ -6,6 +6,7 @@
 :root {
   --background: #f8eded;
   --foreground: #1c213f;
+  --outline: #ede0e0;
   --yellow: #f3b900;
   --green: green;
   --coral: #f5534f;
@@ -25,6 +26,7 @@
   :root {
     --background: #1c213f;
     --foreground: #f8eded;
+    --outline: #151932;
   }
 }
 

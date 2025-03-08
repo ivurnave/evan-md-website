@@ -19,6 +19,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        outline: "var(--outline)",
         yellow: "var(--yellow)",
         green: "var(--green)",
         coral: "var(--coral)",
