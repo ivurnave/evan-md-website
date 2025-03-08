@@ -1,4 +1,3 @@
-import { Colors } from "./src/colors";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,11 +19,20 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        yellow: Colors.yellow,
-        green: Colors.green,
-        coral: Colors.coral,
-        blue: Colors.blue
-      },
+        outline: "var(--outline)",
+        yellow: "var(--yellow)",
+        green: "var(--green)",
+        coral: "var(--coral)",
+        blue: "var(--blue)",
+        "yellow-light": "var(--yellow-light)",
+        "green-light": "var(--green-light)",
+        "coral-light": "var(--coral-light)",
+        "blue-light": "var(--blue-light)",
+        "yellow-dark": "var(--yellow-dark)",
+        "green-dark": "var(--green-dark)",
+        "coral-dark": "var(--coral-dark)",
+        "blue-dark": "var(--blue-dark)",
+      }
     },
   },
   plugins: [],
