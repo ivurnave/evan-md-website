@@ -10,7 +10,6 @@ const StyledLink = ({ href, title }: { href: string, title: string }) => <Link c
 
 const ToggleNavbarButton = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: boolean) => void }) => {
     const toggleNavbar = () => {
-        console.log('toggling nav')
         setIsOpen(!isOpen)
     }
 
@@ -38,7 +37,6 @@ export const Nav = () => {
     const mobileNavRef = useClickOutside<HTMLDivElement>(() => setIsOpen(false));
 
     const pathname = usePathname();
-    console.log(pathname)
 
     useEffect(() => {
         if (isOpen) {
