@@ -2,17 +2,22 @@
 
 import Link from "next/link"
 import { HeaderDecoration } from "./HeaderDecoration"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useClickOutside } from "@/hooks/useOutsideClick";
+import { usePathname } from "next/navigation";
 
 const StyledLink = ({ href, title }: { href: string, title: string }) => <Link className={`m-1 p-1 rounded-full hover:bg-outline`} href={href}>{title}</Link>
 
 const ToggleNavbarButton = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: boolean) => void }) => {
-    const toggleNavbar = () => setIsOpen(!isOpen)
+    const toggleNavbar = () => {
+        console.log('toggling nav')
+        setIsOpen(!isOpen)
+    }
 
     return (
         <button
             onClick={toggleNavbar}
-            className="relative size-[32px] flex flex-col justify-center items-center rounded-full border-solid border border-outline shadow-xl overflow-hidden"
+            className="relative size-[32px] flex flex-col bg-background justify-center items-center rounded-full border-solid border border-outline shadow-xl overflow-hidden"
         >
             <span
                 className={`bg-foreground block transition-all duration-300 ease-out w-[16px] h-[1px] rounded-sm transform ${isOpen ? 'rotate-45 translate-y-[1px]' : '-translate-y-[4px]'}`}
@@ -30,31 +35,42 @@ const ToggleNavbarButton = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen:
 
 export const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const mobileNavRef = useClickOutside<HTMLDivElement>(() => setIsOpen(false));
+
+    const pathname = usePathname();
+    console.log(pathname)
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsOpen(false);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pathname]);
 
     return (
         <>
             {/* Nav desktop */}
-            <div className="hidden md:flex flex-col shrink-0 h-fit rounded-3xl border-solid border border-outline shadow-xl overflow-hidden">
+            <nav className="hidden md:flex flex-col shrink-0 h-fit rounded-3xl border-solid border border-outline shadow-xl overflow-hidden">
                 <HeaderDecoration />
                 <StyledLink href="/" title="Home" />
                 <StyledLink href="/art" title="Art" />
                 <StyledLink href="/woodwork" title="Woodworking" />
                 <StyledLink href="/code" title="Code" />
                 <StyledLink href="/contact" title="Contact me" />
-            </div>
+            </nav>
             {/* Nav mobile */}
-            <div className="md:hidden relative">
+            <div ref={mobileNavRef} className="md:hidden fixed z-40">
                 <ToggleNavbarButton isOpen={isOpen} setIsOpen={setIsOpen} />
                 {isOpen &&
-                    <div className="z-40 bg-background absolute top-[40px] flex flex-col shrink-0 h-fit rounded-3xl border-solid border border-outline shadow-xl overflow-hidden">
-
+                    <nav className="bg-background absolute top-[40px] flex flex-col shrink-0 h-fit rounded-3xl border-solid border border-outline shadow-xl overflow-hidden">
                         <HeaderDecoration />
                         <StyledLink href="/" title="Home" />
                         <StyledLink href="/art" title="Art" />
                         <StyledLink href="/woodwork" title="Woodworking" />
                         <StyledLink href="/code" title="Code" />
                         <StyledLink href="/contact" title="Contact me" />
-                    </div>}
+                    </nav>
+                }
             </div>
         </>
     )
