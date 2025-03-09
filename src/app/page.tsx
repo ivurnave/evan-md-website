@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Home = () => (
     <>
-        <div className="mb-4 p-2 rounded-3xl border-solid border border-outline shadow-xl">
+        <div className="mb-4 p-2">
             <div className="flex flex-col md:flex-row items-center justify-around gap-x-6">
                 <h1 className="block text-center text-6xl">evan holmes</h1>
                 <Image alt="guy in a box" className="dark:invert w-1/2 max-w-md" width={500} height={500} src="/images/cube.png" />
