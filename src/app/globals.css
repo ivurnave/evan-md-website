@@ -52,6 +52,20 @@ body {
     @apply mb-2;
   }
 
+  a {
+    text-decoration: underline;
+    font-style: italic;
+
+    &:hover {
+      background-color: var(--yellow)
+    }
+  }
+
+  ul {
+    @apply ml-3;
+    list-style: disc;
+  }
+
   /* ... */
 }
 
